@@ -40,24 +40,37 @@ void swap(int* arr1,int* arr2,int size){
 bool is_in(const int* arr1,const int* arr2, int size1,int size2){
     const int *p1=arr1;
     const int *p2=arr2;
-    for (int i = 0; i < size2; i++){
-        bool equal = true;
-        p2 = arr2;
-        for (int j = 0; j < size1; j++){
-            if (*p1 == *p2){
-                equal = false;
-                break;}
-            p2++;
+    for (int i = 0; i < size1; i++){
+        bool equal = false;
+        for (int j = 0; j < size2; j++){
+            if (*(p1 + i) == *(p2 + j)){
+                equal = true;
+                break;
+            }
         }
-        if (equal){
-            return true;
+        if (!equal){
+            return false;
         }
     }
-    *p1++;
-    return false;
-
+    return true;
 }
 
+void power(double* n,const int* p){
+    double res  = 1.0;
+    for (int i = 0; i < *p; i++){
+         res = res * *n;
+    }
+    *n = res;
+}
+void power(double* n,const int* p){
+    for (int i = 0; i < *p; i++){
+        *n = *n * *n;
+    }
+}
+
+vector < int > addOne(vector < int > &v){
+
+}
 int main(){
 
     //p1
@@ -155,28 +168,42 @@ int main(){
 //        cout << *(arr52p + i) << " ";
 //     }
 //     cout << endl;
+//
+//     //p6
+//     int size1, size2;
+//     cout << "Enter the size 1: ";
+//     cin >> size1;
+//    int arr61[size1];
+//     int *p1 = arr61;
+//     for (int i = 0; i < size1; i++){
+//         cin >> *(p1 + i);
+//     }
+//     cout << "Enter the size 2: ";
+//     cin >> size2;
+//     int arr62[size2];
+//     int *p2 = arr62;
+//     for (int i = 0; i < size2; i++){
+//        cin >> *(p2 + i);
+//     }
+//     if (is_in(p1, p2, size1, size2) == true){
+//         cout << '1' << endl;
+//     }else{
+//         cout << '0' << endl;
+//     }
 
-     //p6
-     int size1, size2;
-     cout << "Enter the size 1: ";
-     cin >> size1;
-    int arr61[size1];
-     int *p1 = arr61;
-     for (int i = 0; i < size1; i++){
-         cin >> *(p1 + i);
-     }
-     cout << "Enter the size 2: ";
-     cin >> size2;
-     int arr62[size2];
-     int *p2 = arr62;
-     for (int i = 0; i < size2; i++){
-        cin >> *(p2 + i);
-     }
-     if (is_in(p1, p2, size1, size2)){
-         cout << '1' << endl;
-     }else{
-         cout << '0' << endl;
-     }
+//     //p7
+//     double n7;
+//     int power7;
+//     double *pn7 = &n7;
+//     int *pp = &power7;
+//     cout << "Enter number and it's power: ";
+//     cin >> n7 >> power7;
+//     power(pn7, pp);
+//     cout << *pn7 << endl;
+
+     //p8
+
+
 
 
 
